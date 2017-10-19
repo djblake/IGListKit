@@ -140,6 +140,12 @@ static id IGListDiffing(BOOL returnIndexPaths,
                         entry->updated = YES;
                     }
                     break;
+                case IGListDiffEqualityOnly:
+                    // use -[IGListDiffable isEqualToDiffableObject:] between both version of data to see if anything has changed
+                    if (![n isEqualToDiffableObject:o]) {
+                        entry->updated = YES;
+                    }
+                    break;
             }
         }
         if (originalIndex != NSNotFound
