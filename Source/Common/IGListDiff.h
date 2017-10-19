@@ -28,6 +28,9 @@ typedef NS_ENUM(NSInteger, IGListDiffOption) {
      Compare objects using `-[IGListDiffable isEqualToDiffableObject:]`.
      */
     IGListDiffEquality,
+     /**
+     Compare objects using ONLY `-[IGListDiffable isEqualToDiffableObject:]`, doesn't check pointer address.
+     */
     IGListDiffEqualityOnly
 };
 
